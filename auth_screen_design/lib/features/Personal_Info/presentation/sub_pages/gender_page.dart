@@ -1,10 +1,10 @@
 import 'package:auth_screen_design/common%20widgets/radio_field.dart';
-import 'package:auth_screen_design/features/Personal_Info/widgets/castom_elevated_button.dart';
+import 'package:auth_screen_design/features/personal_Info/widgets/castom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
 class GenderPage extends StatefulWidget {
   final PageController pageController;
-  GenderPage({super.key, required this.pageController});
+  const GenderPage({super.key, required this.pageController});
 
   @override
   State<GenderPage> createState() => _GenderPageState();

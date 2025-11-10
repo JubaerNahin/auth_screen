@@ -8,6 +8,7 @@ class PopupCard {
     required String message,
     String? imagePath,
     Color? color,
+    bool? extraElevated,
   }) {
     showDialog(
       context: context,
@@ -55,6 +56,13 @@ class PopupCard {
                     text: 'Go to Login',
                     onPressed: () => Navigator.pushNamed(context, "/"),
                   ),
+                  const SizedBox(height: 20),
+                  if (extraElevated == true)
+                    Elevatedbutton(
+                      text: 'Go to Ai Setup',
+                      onPressed: () =>
+                          Navigator.pushNamed(context, "/ai_coach"),
+                    ),
                 ],
               ),
             ),

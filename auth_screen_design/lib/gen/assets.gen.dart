@@ -18,6 +18,9 @@ class $AssetsImagesGen {
   AssetGenImage get a74CelkisGear =>
       const AssetGenImage('assets/images/74_celkis_gear.jpg');
 
+  /// File path: assets/images/ai.jpg
+  AssetGenImage get ai => const AssetGenImage('assets/images/ai.jpg');
+
   /// File path: assets/images/google_logo.png
   AssetGenImage get googleLogo =>
       const AssetGenImage('assets/images/google_logo.png');
@@ -26,8 +29,17 @@ class $AssetsImagesGen {
   AssetGenImage get macOsLogo =>
       const AssetGenImage('assets/images/mac-os-logo.png');
 
+  /// File path: assets/images/running.png
+  AssetGenImage get running => const AssetGenImage('assets/images/running.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [a74CelkisGear, googleLogo, macOsLogo];
+  List<AssetGenImage> get values => [
+    a74CelkisGear,
+    ai,
+    googleLogo,
+    macOsLogo,
+    running,
+  ];
 }
 
 class Assets {

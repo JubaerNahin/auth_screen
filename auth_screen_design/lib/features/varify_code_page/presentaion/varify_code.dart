@@ -60,7 +60,11 @@ class VarifyCode extends StatelessWidget {
                     SizedBox(height: 40),
                     Pinput(length: 4),
                     SizedBox(height: 32),
-                    Elevatedbutton(text: 'Varify', onPressed: () {}),
+                    Elevatedbutton(
+                      text: 'Varify',
+                      onPressed: () =>
+                          Navigator.pushNamed(context, '/reset_password'),
+                    ),
                     SizedBox(height: 32),
 
                     Row(

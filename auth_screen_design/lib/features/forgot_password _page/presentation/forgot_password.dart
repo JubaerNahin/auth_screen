@@ -63,7 +63,11 @@ class ForgotPassword extends StatelessWidget {
                       hintText: "johndoe123@gmail.com",
                     ),
                     SizedBox(height: 20),
-                    Elevatedbutton(text: 'Submit', onPressed: () {}),
+                    Elevatedbutton(
+                      text: 'Submit',
+                      onPressed: () =>
+                          Navigator.pushNamed(context, '/varify_code'),
+                    ),
                     SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,

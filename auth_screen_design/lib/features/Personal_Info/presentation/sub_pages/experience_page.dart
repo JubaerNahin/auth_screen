@@ -1,10 +1,10 @@
 import 'package:auth_screen_design/common%20widgets/radio_field.dart';
-import 'package:auth_screen_design/features/Personal_Info/widgets/castom_elevated_button.dart';
+import 'package:auth_screen_design/features/personal_Info/widgets/castom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
 class ExperiencePage extends StatefulWidget {
   final PageController pageController;
-  ExperiencePage({super.key, required this.pageController});
+  const ExperiencePage({super.key, required this.pageController});
 
   @override
   State<ExperiencePage> createState() => _ExperiencePageState();

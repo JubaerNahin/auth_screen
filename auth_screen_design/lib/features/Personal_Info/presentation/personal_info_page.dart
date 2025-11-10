@@ -1,7 +1,7 @@
-import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/age_page.dart';
-import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/gender_page.dart';
-import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/default_page.dart';
-import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/experience_page.dart';
+import 'package:auth_screen_design/features/personal_Info/presentation/sub_pages/age_page.dart';
+import 'package:auth_screen_design/features/personal_Info/presentation/sub_pages/gender_page.dart';
+import 'package:auth_screen_design/features/personal_Info/presentation/sub_pages/habit_selection_page.dart';
+import 'package:auth_screen_design/features/personal_Info/presentation/sub_pages/experience_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -50,6 +50,11 @@ class PersonalInfoPage extends StatelessWidget {
                   SmoothPageIndicator(
                     controller: _pageController,
                     count: 4,
+                    onDotClicked: (index) => _pageController.animateToPage(
+                      index,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    ),
                     effect: WormEffect(
                       spacing: 30,
                       dotWidth: 48,
@@ -71,7 +76,7 @@ class PersonalInfoPage extends StatelessWidget {
                     AgePage(pageController: _pageController),
                     GenderPage(pageController: _pageController),
                     ExperiencePage(pageController: _pageController),
-                    DefaultPage(pageController: _pageController),
+                    HabitSelectionPage(pageController: _pageController),
                   ],
                 ),
               ),

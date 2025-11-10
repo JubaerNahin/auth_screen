@@ -121,7 +121,8 @@ class SignUpPage extends StatelessWidget {
                     const SizedBox(height: 20),
 
                     Elevatedbutton(
-                      onPressed: () => print('Logged In'),
+                      onPressed: () =>
+                          Navigator.pushNamed(context, '/personal_info_page'),
                       text: 'Create a New Account',
                     ),
                     const SizedBox(height: 20),
