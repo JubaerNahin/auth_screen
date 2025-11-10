@@ -14,21 +14,21 @@ class CustomElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: 60,
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: isEnable
-              ? Colors.white60
-              : const Color.fromARGB(255, 5, 30, 51),
+              ? const Color.fromARGB(255, 5, 30, 51)
+              : Colors.white70,
         ),
         onPressed: onPressed,
         child: Text(
           text,
           style: TextStyle(
             color: isEnable
-                ? Colors.black26
-                : const Color.fromARGB(255, 241, 232, 147),
+                ? const Color.fromARGB(255, 241, 232, 147)
+                : Colors.black26,
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),

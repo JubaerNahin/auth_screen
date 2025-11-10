@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DefaultPage extends StatelessWidget {
-  const DefaultPage({super.key});
+  final PageController pageController;
+  DefaultPage({super.key, required this.pageController});
 
   @override
   Widget build(BuildContext context) {

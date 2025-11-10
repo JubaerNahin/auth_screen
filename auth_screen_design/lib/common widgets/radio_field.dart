@@ -19,7 +19,7 @@ class RadioField extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 60,
+        height: 70,
         padding: const EdgeInsets.all(16),
         width: double.infinity,
         decoration: BoxDecoration(
@@ -32,46 +32,55 @@ class RadioField extends StatelessWidget {
             width: onSelect ? 2 : 1,
           ),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              text,
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                color: onSelect
-                    ? const Color.fromARGB(255, 5, 30, 51)
-                    : Colors.black,
+        child: onSelect
+            ? Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(Icons.radio_button_checked),
+                  SizedBox(width: 10),
+                  Text(
+                    text,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: onSelect
+                          ? const Color.fromARGB(255, 5, 30, 51)
+                          : Colors.black,
+                    ),
+                  ),
+                  Expanded(child: SizedBox()),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      color: onSelect
+                          ? const Color.fromARGB(255, 5, 30, 51)
+                          : Colors.grey,
+                    ),
+                  ),
+                ],
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    text,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: onSelect
+                          ? const Color.fromARGB(255, 5, 30, 51)
+                          : Colors.black,
+                    ),
+                  ),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      color: onSelect
+                          ? const Color.fromARGB(255, 5, 30, 51)
+                          : Colors.grey,
+                    ),
+                  ),
+                ],
               ),
-            ),
-            Text(
-              subtitle,
-              style: TextStyle(
-                color: onSelect
-                    ? const Color.fromARGB(255, 5, 30, 51)
-                    : Colors.grey,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
 }
-
-
-// TextField(
-//       decoration: InputDecoration(
-//         enabledBorder: OutlineInputBorder(
-//           borderSide: BorderSide(color: Colors.grey.shade300),
-//           borderRadius: BorderRadius.circular(10),
-//         ),
-//         focusedBorder: OutlineInputBorder(
-//           borderRadius: BorderRadius.circular(10),
-//           borderSide: BorderSide(
-//             color: const Color.fromARGB(255, 5, 30, 51),
-//             width: 2,
-//           ),
-//         ),
-//       ),
-//     );

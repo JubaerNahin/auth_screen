@@ -2,15 +2,15 @@ import 'package:auth_screen_design/common%20widgets/radio_field.dart';
 import 'package:auth_screen_design/features/Personal_Info/widgets/castom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
-class GenderPage extends StatefulWidget {
+class ExperiencePage extends StatefulWidget {
   final PageController pageController;
-  GenderPage({super.key, required this.pageController});
+  ExperiencePage({super.key, required this.pageController});
 
   @override
-  State<GenderPage> createState() => _GenderPageState();
+  State<ExperiencePage> createState() => _ExperiencePageState();
 }
 
-class _GenderPageState extends State<GenderPage> {
+class _ExperiencePageState extends State<ExperiencePage> {
   int selectedIndex = -1;
 
   @override
@@ -19,16 +19,16 @@ class _GenderPageState extends State<GenderPage> {
       children: [
         SizedBox(height: 5),
         Text(
-          'Let\'s get to know you better!',
+          'Lets\'s personalize your experience',
           style: TextStyle(
             color: const Color.fromARGB(255, 5, 30, 51),
-            fontSize: 18,
+            fontSize: 14,
             fontWeight: FontWeight.w400,
           ),
         ),
         SizedBox(height: 40),
         Text(
-          'What\'s your gender?',
+          'What\'s your primary focus area',
           style: TextStyle(
             color: const Color.fromARGB(255, 5, 30, 51),
             fontSize: 22,
@@ -38,8 +38,8 @@ class _GenderPageState extends State<GenderPage> {
         SizedBox(height: 20),
 
         RadioField(
-          text: "Female",
-          subtitle: "👩",
+          text: "Study & Learning",
+          subtitle: "💡",
           onSelect: selectedIndex == 0,
           onTap: () {
             setState(() {
@@ -49,8 +49,8 @@ class _GenderPageState extends State<GenderPage> {
         ),
         SizedBox(height: 20),
         RadioField(
-          text: "Male",
-          subtitle: "👨",
+          text: "Career Growth",
+          subtitle: "🎓",
           onSelect: selectedIndex == 1,
           onTap: () {
             setState(() {
@@ -58,7 +58,30 @@ class _GenderPageState extends State<GenderPage> {
             });
           },
         ),
+        SizedBox(height: 20),
 
+        RadioField(
+          text: "Productivity",
+          subtitle: "🚀",
+          onSelect: selectedIndex == 2,
+          onTap: () {
+            setState(() {
+              selectedIndex = 2;
+            });
+          },
+        ),
+        SizedBox(height: 20),
+
+        RadioField(
+          text: "Health & Fitness",
+          subtitle: "🏃",
+          onSelect: selectedIndex == 3,
+          onTap: () {
+            setState(() {
+              selectedIndex = 3;
+            });
+          },
+        ),
         Expanded(child: SizedBox()),
         CustomElevatedButton(
           text: "Next 〉",

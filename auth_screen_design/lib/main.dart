@@ -1,5 +1,6 @@
 import 'package:auth_screen_design/features/Personal_Info/presentation/personal_info_page.dart';
 import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/age_page.dart';
+import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/experience_page.dart';
 import 'package:auth_screen_design/features/forgot_password%20_page/presentation/forgot_password.dart';
 import 'package:auth_screen_design/features/login_page/presentation/login_page.dart';
 import 'package:auth_screen_design/features/set_new_password_page/presentaion/reset_password.dart';
@@ -12,7 +13,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final PageController _pageController = PageController();
+
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +29,9 @@ class MyApp extends StatelessWidget {
         "/reset_password": (context) => ResetPassword(),
         "/sign_up": (context) => SignUpPage(),
         //  "/gender_page": (context) => GenderPage(),
-        "/age_page": (context) => AgePage(),
-        // "/expoerience_page": (context) => ExpoeriencePage(),
+        "/age_page": (context) => AgePage(pageController: _pageController),
+        "/experience_page": (context) =>
+            ExperiencePage(pageController: _pageController),
         "/personal_info_page": (context) => PersonalInfoPage(),
       },
     );

@@ -3,14 +3,14 @@ import 'package:auth_screen_design/features/Personal_Info/widgets/castom_elevate
 import 'package:flutter/material.dart';
 
 class AgePage extends StatefulWidget {
-  const AgePage({super.key});
+  final PageController pageController;
+  AgePage({super.key, required this.pageController});
 
   @override
   State<AgePage> createState() => _AgePageState();
 }
 
 class _AgePageState extends State<AgePage> {
-  @override
   int selectedIndex = -1;
 
   @override
@@ -22,7 +22,7 @@ class _AgePageState extends State<AgePage> {
           'Let\'s get to know you better!',
           style: TextStyle(
             color: const Color.fromARGB(255, 5, 30, 51),
-            fontSize: 14,
+            fontSize: 18,
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -84,11 +84,14 @@ class _AgePageState extends State<AgePage> {
         ),
         Expanded(child: SizedBox()),
         CustomElevatedButton(
-          text: "Next",
+          text: "Next 〉",
           onPressed: () {
-            Navigator.pushNamed(context, '/expoerience_page');
+            widget.pageController.nextPage(
+              duration: Duration(milliseconds: 300),
+              curve: Curves.easeInOut,
+            );
           },
-          isEnable: true,
+          isEnable: selectedIndex != -1 ? true : false,
         ),
       ],
     );

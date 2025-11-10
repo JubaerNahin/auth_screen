@@ -1,13 +1,13 @@
 import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/age_page.dart';
 import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/gender_page.dart';
 import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/default_page.dart';
-import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/expoerience_page.dart';
+import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/experience_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class PersonalInfoPage extends StatelessWidget {
   PersonalInfoPage({super.key});
-  final _pageController = PageController();
+  final PageController _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,6 @@ class PersonalInfoPage extends StatelessWidget {
 
               Row(
                 children: [
-                  // Back button
                   Container(
                     height: 40,
                     width: 40,
@@ -69,10 +68,10 @@ class PersonalInfoPage extends StatelessWidget {
                 child: PageView(
                   controller: _pageController,
                   children: [
-                    AgePage(),
-                    GenderPage(),
-                    ExpoeriencePage(),
-                    DefaultPage(),
+                    AgePage(pageController: _pageController),
+                    GenderPage(pageController: _pageController),
+                    ExperiencePage(pageController: _pageController),
+                    DefaultPage(pageController: _pageController),
                   ],
                 ),
               ),
