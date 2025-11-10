@@ -1,0 +1,35 @@
+import 'package:auth_screen_design/features/Personal_Info/presentation/personal_info_page.dart';
+import 'package:auth_screen_design/features/Personal_Info/presentation/sub_pages/age_page.dart';
+import 'package:auth_screen_design/features/forgot_password%20_page/presentation/forgot_password.dart';
+import 'package:auth_screen_design/features/login_page/presentation/login_page.dart';
+import 'package:auth_screen_design/features/set_new_password_page/presentaion/reset_password.dart';
+import 'package:auth_screen_design/features/sign_up_page/presentaion/sign_up_page.dart';
+import 'package:auth_screen_design/features/varify_code_page/presentaion/varify_code.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/personal_info_page',
+      routes: {
+        "/": (context) => LogInPage(),
+        "/forgot_password": (context) => ForgotPassword(),
+        "/varify_code": (context) => VarifyCode(),
+        "/reset_password": (context) => ResetPassword(),
+        "/sign_up": (context) => SignUpPage(),
+        //  "/gender_page": (context) => GenderPage(),
+        "/age_page": (context) => AgePage(),
+        // "/expoerience_page": (context) => ExpoeriencePage(),
+        "/personal_info_page": (context) => PersonalInfoPage(),
+      },
+    );
+  }
+}
