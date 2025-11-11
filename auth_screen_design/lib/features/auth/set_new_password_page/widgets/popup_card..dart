@@ -8,7 +8,7 @@ class PopupCard {
     required String message,
     String? imagePath,
     Color? color,
-    bool? extraElevated,
+    bool? extraElevated, required String btn3Text, required String btn2Text, required String btn1Text,
   }) {
     showDialog(
       context: context,

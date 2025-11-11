@@ -1,6 +1,6 @@
-import 'package:auth_screen_design/features/Personal_Info/widgets/radio_button_checked_field.dart';
-import 'package:auth_screen_design/features/personal_Info/widgets/castom_elevated_button.dart';
-import 'package:auth_screen_design/features/set_new_password_page/widgets/popup_card..dart';
+import 'package:auth_screen_design/features/auth/Personal_Info/widgets/castom_elevated_button.dart';
+import 'package:auth_screen_design/features/auth/Personal_Info/widgets/radio_button_checked_field.dart';
+import 'package:auth_screen_design/features/auth/set_new_password_page/widgets/popup_card..dart';
 import 'package:auth_screen_design/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
@@ -170,6 +170,9 @@ class _HabitSelectionPageState extends State<HabitSelectionPage> {
               message:
                   'Your selected habits have been added to your daily plan',
               imagePath: Assets.images.a74CelkisGear.path,
+              btn3Text: '',
+              btn2Text: '',
+              btn1Text: '',
               //color: Colors.green,
             ),
             isEnable: selectedIndex != -1 ? true : false,

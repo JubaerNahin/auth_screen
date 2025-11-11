@@ -29,6 +29,10 @@ class $AssetsImagesGen {
   AssetGenImage get macOsLogo =>
       const AssetGenImage('assets/images/mac-os-logo.png');
 
+  /// File path: assets/images/mountain.png
+  AssetGenImage get mountain =>
+      const AssetGenImage('assets/images/mountain.png');
+
   /// File path: assets/images/running.png
   AssetGenImage get running => const AssetGenImage('assets/images/running.png');
 
@@ -38,6 +42,7 @@ class $AssetsImagesGen {
     ai,
     googleLogo,
     macOsLogo,
+    mountain,
     running,
   ];
 }

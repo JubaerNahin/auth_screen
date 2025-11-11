@@ -1,16 +1,16 @@
 import 'package:auth_screen_design/common%20widgets/radio_field.dart';
-import 'package:auth_screen_design/features/personal_Info/widgets/castom_elevated_button.dart';
+import 'package:auth_screen_design/features/auth/Personal_Info/widgets/castom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
-class AgePage extends StatefulWidget {
+class GenderPage extends StatefulWidget {
   final PageController pageController;
-  const AgePage({super.key, required this.pageController});
+  const GenderPage({super.key, required this.pageController});
 
   @override
-  State<AgePage> createState() => _AgePageState();
+  State<GenderPage> createState() => _GenderPageState();
 }
 
-class _AgePageState extends State<AgePage> {
+class _GenderPageState extends State<GenderPage> {
   int selectedIndex = -1;
 
   @override
@@ -28,7 +28,7 @@ class _AgePageState extends State<AgePage> {
         ),
         SizedBox(height: 40),
         Text(
-          'How Old are you?',
+          'What\'s your gender?',
           style: TextStyle(
             color: const Color.fromARGB(255, 5, 30, 51),
             fontSize: 22,
@@ -38,8 +38,8 @@ class _AgePageState extends State<AgePage> {
         SizedBox(height: 20),
 
         RadioField(
-          text: "12-18",
-          subtitle: "I'm Student",
+          text: "Female",
+          subtitle: "👩",
           onSelect: selectedIndex == 0,
           onTap: () {
             setState(() {
@@ -49,8 +49,8 @@ class _AgePageState extends State<AgePage> {
         ),
         SizedBox(height: 20),
         RadioField(
-          text: "18-24",
-          subtitle: "I'm young adults",
+          text: "Male",
+          subtitle: "👨",
           onSelect: selectedIndex == 1,
           onTap: () {
             setState(() {
@@ -58,30 +58,7 @@ class _AgePageState extends State<AgePage> {
             });
           },
         ),
-        SizedBox(height: 20),
 
-        RadioField(
-          text: "24-40",
-          subtitle: "I'm middle age adults",
-          onSelect: selectedIndex == 2,
-          onTap: () {
-            setState(() {
-              selectedIndex = 2;
-            });
-          },
-        ),
-        SizedBox(height: 20),
-
-        RadioField(
-          text: "40 Above",
-          subtitle: "I'm old adults",
-          onSelect: selectedIndex == 3,
-          onTap: () {
-            setState(() {
-              selectedIndex = 3;
-            });
-          },
-        ),
         Expanded(child: SizedBox()),
         CustomElevatedButton(
           text: "Next 〉",

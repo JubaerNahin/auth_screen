@@ -1,7 +1,7 @@
-import 'package:auth_screen_design/features/personal_Info/presentation/sub_pages/age_page.dart';
-import 'package:auth_screen_design/features/personal_Info/presentation/sub_pages/gender_page.dart';
-import 'package:auth_screen_design/features/personal_Info/presentation/sub_pages/habit_selection_page.dart';
-import 'package:auth_screen_design/features/personal_Info/presentation/sub_pages/experience_page.dart';
+import 'package:auth_screen_design/features/auth/Personal_Info/presentation/sub_pages/age_page.dart';
+import 'package:auth_screen_design/features/auth/Personal_Info/presentation/sub_pages/experience_page.dart';
+import 'package:auth_screen_design/features/auth/Personal_Info/presentation/sub_pages/gender_page.dart';
+import 'package:auth_screen_design/features/auth/Personal_Info/presentation/sub_pages/habit_selection_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

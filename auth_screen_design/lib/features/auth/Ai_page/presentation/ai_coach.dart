@@ -11,7 +11,7 @@ class AiCoach extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           height: double.infinity,
           width: double.infinity,
           child: Padding(
@@ -98,14 +98,15 @@ class AiCoach extends StatelessWidget {
                   },
                 ),
                 SizedBox(height: 20),
-                Container(
+                SizedBox(
                   height: 50,
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.black,
-                      elevation: 1,
+                      elevation: 0,
+                      side: BorderSide(color: Colors.grey.shade300),
                     ),
                     onPressed: () {},
                     child: Text('Skip'),
