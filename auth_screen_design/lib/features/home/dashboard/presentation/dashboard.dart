@@ -1,4 +1,4 @@
-import 'package:auth_screen_design/features/auth/set_new_password_page/widgets/popup_card..dart';
+import 'package:auth_screen_design/features/home/dashboard/widget/ai_coach_suggestion_popup.dart';
 import 'package:auth_screen_design/features/home/dashboard/widget/daily_task.dart';
 import 'package:auth_screen_design/features/home/dashboard/widget/home_screen_popup.dart';
 import 'package:auth_screen_design/gen/assets.gen.dart';
@@ -45,7 +45,60 @@ class Dashboard extends StatelessWidget {
               child: Container(
                 height: 200,
                 width: double.infinity,
-                decoration: BoxDecoration(color: Colors.blueGrey),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(Assets.images.mountainImage.path),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 16),
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 24,
+                            backgroundImage: AssetImage(Assets.images.man.path),
+                          ),
+                          SizedBox(width: 16),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Good Morning,Alex 👋',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Text(
+                                "Ready to win your day?",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Text(
+                        'Here\'s your plan to score today\'s points and hit your goals',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
 
@@ -192,39 +245,44 @@ class Dashboard extends StatelessWidget {
 
                   SizedBox(height: 10),
 
-                  Container(
-                    height: 130,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.black12),
-                      color: Color(0xFFFAFAFB),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                  GestureDetector(
+                    onTap: () {
+                      AiCoachSuggestionPopup.show(context);
+                    },
+                    child: Container(
+                      height: 130,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.black12),
+                        color: Color(0xFFFAFAFB),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
 
-                        children: [
-                          Text(
-                            "✨ AI Coach Nudge",
-                            style: TextStyle(
-                              color: Color(0xFF5B6477),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
+                          children: [
+                            Text(
+                              "✨ AI Coach Nudge",
+                              style: TextStyle(
+                                color: Color(0xFF5B6477),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'Complete 3 Q2 tasks before noon for a 50+ Daily Boost!',
-                            style: TextStyle(
-                              color: Color(0xFF071431),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
+                            SizedBox(height: 10),
+                            Text(
+                              'Complete 3 Q2 tasks before noon for a 50+ Daily Boost!',
+                              style: TextStyle(
+                                color: Color(0xFF071431),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -584,12 +642,55 @@ class Dashboard extends StatelessWidget {
 
                   SizedBox(height: 20),
                   Container(
-                    height: 150,
+                    padding: EdgeInsets.all(16),
+                    height: 120,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(width: 0),
-                      color: Color(0xFFFAFAFB),
+                      color: Color(0xFFEBECEF),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Achievements Earned',
+                          style: TextStyle(
+                            color: Color(0xFF404A60),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Assets.images.star.image(height: 40, width: 40),
+                            SizedBox(width: 10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Consistency Hero",
+                                  style: TextStyle(
+                                    color: Color(0xFF404A60),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+
+                                Text(
+                                  "Maintain 5+ streaks in a week",
+                                  style: TextStyle(
+                                    color: Color(0xFF5B6477),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
 

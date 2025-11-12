@@ -29,12 +29,22 @@ class $AssetsImagesGen {
   AssetGenImage get macOsLogo =>
       const AssetGenImage('assets/images/mac-os-logo.png');
 
+  /// File path: assets/images/man.jpg
+  AssetGenImage get man => const AssetGenImage('assets/images/man.jpg');
+
   /// File path: assets/images/mountain.png
   AssetGenImage get mountain =>
       const AssetGenImage('assets/images/mountain.png');
 
+  /// File path: assets/images/mountain_image.jpg
+  AssetGenImage get mountainImage =>
+      const AssetGenImage('assets/images/mountain_image.jpg');
+
   /// File path: assets/images/running.png
   AssetGenImage get running => const AssetGenImage('assets/images/running.png');
+
+  /// File path: assets/images/star.png
+  AssetGenImage get star => const AssetGenImage('assets/images/star.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
@@ -42,8 +52,11 @@ class $AssetsImagesGen {
     ai,
     googleLogo,
     macOsLogo,
+    man,
     mountain,
+    mountainImage,
     running,
+    star,
   ];
 }
 

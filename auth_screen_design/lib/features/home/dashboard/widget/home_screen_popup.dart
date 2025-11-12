@@ -1,47 +1,171 @@
+import 'package:auth_screen_design/features/home/add_new_habit/presentation/add_new_habit.dart';
+import 'package:auth_screen_design/features/home/add_new_task/presentation/add_new_task.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreenPopup {
   static void show(BuildContext context) {
-    final double bottomPadding = 150; // distance above navbar
+    final double bottomPadding = 120;
 
-    showGeneralDialog(
+    showDialog(
       context: context,
       barrierDismissible: true,
-      barrierLabel: "Popup",
       barrierColor: Colors.transparent,
-      pageBuilder: (context, anim1, anim2) {
+      builder: (context) {
         return Stack(
           children: [
-            // Semi-transparent background
-            GestureDetector(
-              onTap: () => Navigator.of(context).pop(),
-              child: Container(color: Colors.black54),
-            ),
-            // Positioned popup above navbar
             Positioned(
               bottom: bottomPadding,
-              right: 12, // distance from right edge
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                elevation: 0,
+              right: 12,
+              child: Material(
+                elevation: 4,
+                borderRadius: BorderRadius.circular(8),
                 child: Container(
-                  height: 200,
-                  width: 200,
+                  width: 300,
+
                   decoration: BoxDecoration(
-                    color: Colors.redAccent,
-                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                  // You can add your buttons, text, images here
-                  child: Center(
-                    child: Text(
-                      "Popup Above Navbar",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 170,
+                          height: 50,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(32),
+                                side: BorderSide(color: Color(0xFFEBECEF)),
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AddNewTask(),
+                                ),
+                              );
+                            },
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "📑 Add Task",
+                                style: TextStyle(color: Color(0xFF143048)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 12),
+                        Container(
+                          width: 170,
+                          height: 50,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(32),
+                                side: BorderSide(color: Color(0xFFEBECEF)),
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AddNewHabit(),
+                                ),
+                              );
+                            },
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "🔁 Add Habit",
+                                style: TextStyle(color: Color(0xFF143048)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 12),
+                        Container(
+                          width: 170,
+                          height: 50,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(32),
+                                side: BorderSide(color: Color(0xFFEBECEF)),
+                              ),
+                            ),
+                            onPressed: () {},
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                // textAlign: TextAlign.start,
+                                "⛰️ Add Goal",
+                                style: TextStyle(color: Color(0xFF143048)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 12),
+                        Row(
+                          children: [
+                            Container(
+                              width: 170,
+                              height: 50,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 0,
+                                  backgroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(32),
+                                    side: BorderSide(color: Color(0xFFEBECEF)),
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    "✨ Add Ai Quick",
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(color: Color(0xFF143048)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Spacer(),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF143048),
+                                shape: BoxShape.circle,
+                              ),
+                              child: FloatingActionButton(
+                                backgroundColor: Color(0xFF143048),
+                                elevation: 0,
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 18.0),
+                                  child: Icon(
+                                    Icons.minimize,
+                                    color: Colors.white,
+                                    size: 32,
+                                  ),
+                                ),
+                                shape: CircleBorder(),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),

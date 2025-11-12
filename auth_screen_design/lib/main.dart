@@ -1,7 +1,6 @@
 import 'package:auth_screen_design/features/auth/Ai_page/presentation/ai_coach.dart';
 import 'package:auth_screen_design/features/auth/Ai_page/presentation/ai_plan_page.dart';
 import 'package:auth_screen_design/features/auth/Personal_Info/presentation/personal_info_page.dart';
-import 'package:auth_screen_design/features/home/dashboard/presentation/dashboard_screen.dart';
 import 'package:auth_screen_design/features/home/dashboard/presentation/home.dart';
 import 'package:auth_screen_design/features/auth/forgot_password%20_page/presentation/forgot_password.dart';
 import 'package:auth_screen_design/features/auth/login_page/presentation/login_page.dart';
